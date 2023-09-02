@@ -4,7 +4,6 @@ public class User
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
-
     public string Phone { get; set; }
     public string Email { get; set; }
     public string EmailConfirmed { get; set; }
@@ -28,5 +27,9 @@ public class User
         Password = password;
         PasswordConfirmed = passwordConfirmed;
         Role = role;
+    }
+
+    public User()
+    {
     }
 }

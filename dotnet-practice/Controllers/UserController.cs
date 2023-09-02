@@ -7,9 +7,21 @@ namespace dotnet_practice.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        public Task GetUsers()
+        [HttpGet]
+        [Route("search")]
+        public IActionResult GetUsers()
         {
-            return Task.CompletedTask;
+            User user = new()
+            {
+                Name = "Andrés",
+                Phone = "1500050",
+                Email = "test@test.com",
+                EmailConfirmed = "test@test.com",
+                Password = "12345",
+                PasswordConfirmed = "12345",
+                Role = RoleClass.Client
+            };
+            return Ok(user);
         }
     }
 }
